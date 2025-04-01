@@ -1,0 +1,307 @@
+main{
+    justify-content: unset;
+    align-items: unset;
+    padding: 20px 0;
+}
+
+form{
+    all: unset;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+}
+
+
+/* Navbar superior */
+
+#nav_elements{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    gap: 50px;
+}
+
+#nav_left_elements{
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 350px;
+    max-height: 50px;
+
+    margin: 24px 40px 24px 50px;
+}
+
+#nav_right_elements{
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: baseline;
+    align-content: center;
+    justify-content: space-evenly;
+
+    gap: 24px;
+
+    margin: 24px 40px 24px 40px;
+}
+
+#logout_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+
+#logout_button img {
+    width: 30px;
+    height: 30px;
+}
+
+/*input de pesquisa*/
+.Search_Input{
+    width: 100%;
+    padding: 10px 15px 10px 30px;
+
+    min-width: 170px;
+    min-height: 6px;
+
+    max-width: 350px;
+    max-height: 50px;
+
+
+    border: 2px solid;
+    border-radius: 50px;
+    font-size: 17px;
+
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*input de pesquisa da esquerda em cima*/
+#Left_Search{
+    display: flex;
+
+    justify-content: start;
+    align-content: start;
+    align-items: start;
+
+    text-align: start;
+
+}
+
+
+.actions_Buttons{
+    display: inline-flex;
+    padding: 8px 16px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 40px;
+    transition: all 0.3s;
+}
+
+.actions_Buttons:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+#nav_ToDoButton{
+    width: 80px;
+    height: 40px;
+    padding: 10px 20px;
+
+    background-color: #519FDF;
+}
+
+
+#nav_DoneButton{
+    width: 80px;
+    height: 40px;
+    padding: 10px 20px;
+
+    background-color: #F06A6D;
+}
+
+#nav_AddButton{
+    width: 130px;
+    height: 50px;
+    padding: 10px 20px;
+
+    background-color: #5B6097;
+}
+
+.to_do {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #519FDF;
+    color: white;
+    border-radius: 48px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#done {
+    background-color: #F06A6D;
+}
+
+.header_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.header_content > span {
+    flex:1;
+}
+
+.rows_Tasks {
+    grid-template-columns: auto 1fr 1fr auto;
+    padding: 10px 15px 10px 8px;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    margin-top: 20px;
+    background: white;
+    transition: box-shadow 0.3s;
+}
+
+.rows_Tasks:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.row_Elements{
+    display: flex;
+    align-items: center;
+    text-overline: /* 100 */;
+}
+
+.container_Circle {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container_Circle label{
+    margin-left: 10px;
+}
+
+/* Hide the browser's default checkbox */
+.container_Circle input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: -20;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+/* On mouse-over, add a grey background color */
+.container_Circle:hover input ~ .checkmark {
+    background-color: #519FDF;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container_Circle input:checked ~ .checkmark {
+    background-color: #519FDF;
+    border-color: #519FDF;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container_Circle input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container_Circle .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.row_Elements > span {
+    flex: 1;
+}
+
+.row_Elements > div {
+    flex: 1;
+}
+
+#main_container{
+    margin-top: 60px;
+}
+
+.table_Data{
+    border-style: solid;
+    border-radius: 44px;
+    border-color: #A3A3B9;
+}
+
+.task_Status{
+    display: flex;
+    gap: 10px;
+}
+
+.task_Status .actions_Buttons {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+#Tasks_List{
+    margin-bottom: 60px;
+}
+
+

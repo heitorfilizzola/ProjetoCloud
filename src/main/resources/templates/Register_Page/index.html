@@ -1,0 +1,85 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments :: headDefault('Register Page')}"></head>
+<link rel="stylesheet" th:href="@{/css/Register_Page/style2.css}">
+
+<body>
+<header th:replace="~{fragments :: header1}"></header>
+<main>
+
+  <div class="Register_Container" id="Register_Container">
+
+    <a th:href="@{/login}" class="back-arrow curved">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#515151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+        <path d="M9 12h12" style="opacity:0"/> <!-- Espaçamento -->
+      </svg>
+    </a>
+
+    <h1 class="Register_Text">Register</h1>
+
+
+
+    <form action="/register" method="POST" th:object="${registerRequestDTO}">
+      <div style="margin-top: 10px; display: flex; flex-direction:column; align-items: center; justify-content: center;">
+    <div style="position: relative; width: 100%;">
+      <div style="position: absolute; top: 55%; transform: translateY(-50%); left: 4px;">
+        <img th:src='@{/images/User_Vector.svg}'>
+      </div>
+      <input
+              type="text"
+              class="Register_Inputs"
+              id="Username_Input"
+              name="username"
+              placeholder="Username"
+      />
+    </div>
+
+    <div style="position: relative; width: 100%; margin-top:24px;">
+      <div style="position: absolute; top: 55%; transform: translateY(-50%); left: 16px;">
+        <img th:src='@{/images/Letter_Vector.svg}'>
+      </div>
+      <input
+              type="email"
+              class="Register_Inputs"
+              id="Email_Input"
+              name="email"
+              placeholder="Email"
+      />
+    </div>
+
+    <div style="position: relative; width: 100%; margin-top: 24px;">
+      <div style="position: absolute; top: 50%; transform: translateY(-50%); left: 16px;">
+        <img th:src='@{/images/PadLock_Vector.svg}'>
+      </div>
+      <input
+              type="password"
+              class="Register_Inputs"
+              id="Password_Input"
+              name="password"
+              placeholder="Password"
+      />
+    </div>
+      <button type="submit" id="Register_Button">Register</button>
+
+      <div style="position: relative; width: 100%; margin-top: 24px;">
+        <a class="Login_Forgot_Password" th:href="@{login}">Ja possui uma conta? Fazer Login</a>
+      </div>
+
+
+    </form>
+  </div>
+  <script th:src="@{/js/Register_Page/script.js}"></script>
+</main>
+
+<footer th:replace="~{fragments :: footerDefault}"></footer>
+
+
+<script>
+  window.onload = function () {
+    document.getElementById("Register_Container").scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+</script>
+</body>
+</html>
